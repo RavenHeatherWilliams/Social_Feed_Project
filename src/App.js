@@ -2,25 +2,20 @@ import React, { useState } from 'react';
 
 
 function App() {
-  const[entries, setEntries] = useState([{name:[], body: []}])
+  const[entries, setEntries] = useState([{name:"Heather", body: "Hi World!"}])
   return (
     <div>
       <table>
         <thead>
-          <tr></tr>
           <th>Name</th>
-          <tr></tr>
-          <tr>
-            <th>Body</th>
-          </tr>
+          <th>Body</th>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-          </tr>
+          {entries.map((entry) => {
+            return (
+              <tr><td>{entry.name}</td><td>{entry.body}</td></tr>
+            )
+            })}
         </tbody>
       </table>
 
