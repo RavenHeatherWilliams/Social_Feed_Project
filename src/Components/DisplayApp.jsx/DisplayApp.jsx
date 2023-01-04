@@ -1,3 +1,7 @@
+import React from "react";
+import Post from "../Post.jsx/Post";
+
+
 
 const DisplayApp = (props) => {
     return (
@@ -5,12 +9,7 @@ const DisplayApp = (props) => {
         <div>
             {props.parentEntries.map((entry, index) => {
                 return (
-                <div>
-                    {/* <td>{index+1}</td> */}
-                    <td>{entry.name}</td>
-                    <td>{entry.body}</td>
-                    <td>{entry.date}</td>
-                </div>
+                    <Post entry={entry} />
                 )
                 })}
            
