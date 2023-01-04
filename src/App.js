@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import DisplayApp from './Components/DisplayApp/DisplayApp'
+import DisplayApp from './Components/DisplayApp.jsx/DisplayApp'
+
 
 // under const add date option
 function App() {
@@ -13,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default DisplayApp;
