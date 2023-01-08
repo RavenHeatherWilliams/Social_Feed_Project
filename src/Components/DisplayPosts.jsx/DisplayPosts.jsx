@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 
 const DisplayPosts = (props) => {
 
+    console.log(props.parentPosts);
+
     function handleSubmit(event) {
         event.preventDefault();
         let newPost = {
             name: name,
             body: body,
             date: date
-        }
+        };
+        // console.log(newPost);
         props.addNewPost(newPost)
     }
 
@@ -23,10 +26,10 @@ const DisplayPosts = (props) => {
     return ( 
         <form onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type= "text" value={name} onChange={(event) => setName(parseFloat(event.target.value))} />
+            <input type= "text" value={name} onChange={(event) => setName(event.target.value)} />
 
             <label>Body</label>
-            <input type= "textarea" value={body} onChange={(event) => setBody(parseFloat(event.target.value))} />
+            <input type= "textarea" value={body} onChange={(event) => setBody(event.target.value)} />
 
             {/* <label>Like</label>
             <input type= "button" />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import DisplayApp from "./Components/DisplayApp.jsx/DisplayApp" 
+import DisplayApp from "./Components/DisplayApp.jsx/DisplayApp"; 
 import DisplayPosts from "./Components/DisplayPosts.jsx/DisplayPosts";
+import CreatePost from "./Components/CreatePost.jsx/CreatePost";
 
 
 // under const add date option
@@ -15,6 +16,7 @@ function App() {
     <div>
       <DisplayPosts addNewPost={addNewPost}/>
       <DisplayApp parentEntries={posts} />
+      <CreatePost />parentEntries={posts}
     </div>
   );
 }
