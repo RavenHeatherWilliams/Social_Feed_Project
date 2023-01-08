@@ -1,16 +1,17 @@
 import React from "react";
 
 
-const Post = (entry) => {
+const Post = (props) => {
     return (
         <div>
             {/* <td>{index+1}</td> */}
-            <h1>{entry.name}</h1>
-            <h1>{entry.body}</h1>
-            <h1>{entry.like}</h1>
-            <h1>{entry.dislike}</h1>
-            <h1>{entry.date}</h1>
+            <h1>{props.entry.name}</h1>
+            <h1>{props.entry.body}</h1>
+            <h1>{props.entry.date}</h1>
+            <button>Like</button>
+            <button>Dislike</button>
         </div>
+
       );
 }
  

@@ -1,18 +1,42 @@
-import Post from "../Post.jsx/Post";
+import React, { useState } from 'react';
+
 
 const DisplayPosts = (props) => {
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        let newPost = {
+            name: name,
+            body: body,
+            date: date
+        }
+        props.addNewPost(newPost)
+    }
+
+
+    const [name, setName] = useState("");
+    const [body, setBody] = useState("");
+    // const [like, setLike] = useState("");
+    // const [Dislike, setDislike] = useState("");
+    const [date, setDate] = useState("");
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type={}/>
-            <label><Body></Body></label>
-            <input type={}/>
-            <label>Like</label>
-            <input type={}/>
+            <input type= "text" value={name} onChange={(event) => setName(event.target.value)} />
+
+            <label>Body</label>
+            <input type= "textarea" value={body} onChange={(event) => setBody(event.target.value)} />
+
+            {/* <label>Like</label>
+            <input type= "button" />
+
             <label>Dislike</label>
-            <input type={}/>
+            <input type= "button"/> */}
+
             <label>Date</label>
-            <input type= 'date'/>
+            <input type= "date" value={date} onChange={(event) => setDate(event.target.value)}/>
+
+            <button type='submit'>Submit</button>
         </form>
      );
 }

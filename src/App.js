@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import DisplayApp from "./Components/DisplayApp.jsx/DisplayApp" 
-import Post from "./Components/Post.jsx/Post";
 import DisplayPosts from "./Components/DisplayPosts.jsx/DisplayPosts";
 
 
 // under const add date option
 function App() {
-  const[entries, setEntries] = useState([{name:"Heather", body: "Hi World!", date:"12-31-2022"},{name:"Heather", body: "Hi World!", date:"12-31-2022"} ])
+  const[posts, setPost] = useState([{name:"Heather", body: "Hi World!", date:"12-31-2022"},{name:"Heather", body: "Hi World!", date:"12-31-2022"} ])
 
+  function addNewPost(post){
+    let tempPost = [...posts, post]
+    setPost(tempPost)
+  }
   return (
     <div>
-      <DisplayApp parentEntries={entries} />
-      <Post />
-      <DisplayPosts />
-
+      <DisplayPosts addNewPost={addNewPost}/>
+      <DisplayApp parentEntries={posts} />
     </div>
   );
 }
 
-export default DisplayApp;
+export default App;
