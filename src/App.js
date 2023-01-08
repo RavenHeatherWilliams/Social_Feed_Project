@@ -8,7 +8,7 @@ function App() {
   const[posts, setPost] = useState([{name:"Heather", body: "Hi World!", date:"12-31-2022"},{name:"Heather", body: "Hi World!", date:"12-31-2022"} ])
 
   function addNewPost(post){
-    let tempPost = [...posts, post]
+    let tempPost = [post, ...posts];
     setPost(tempPost)
   }
   return (

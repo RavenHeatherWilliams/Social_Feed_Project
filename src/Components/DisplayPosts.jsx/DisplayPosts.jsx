@@ -19,13 +19,14 @@ const DisplayPosts = (props) => {
     // const [like, setLike] = useState("");
     // const [Dislike, setDislike] = useState("");
     const [date, setDate] = useState("");
+
     return ( 
         <form onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type= "text" value={name} onChange={(event) => setName(event.target.value)} />
+            <input type= "text" value={name} onChange={(event) => setName(parseFloat(event.target.value))} />
 
             <label>Body</label>
-            <input type= "textarea" value={body} onChange={(event) => setBody(event.target.value)} />
+            <input type= "textarea" value={body} onChange={(event) => setBody(parseFloat(event.target.value))} />
 
             {/* <label>Like</label>
             <input type= "button" />
